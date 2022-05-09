@@ -57,7 +57,7 @@ const createDocument = async () => {
 // createDocument();
 const readDocuments = async () => {
   try {
-    const result = await PLayList.find({  ctype:{$not:/^Back End.*/}}).select({
+    const result = await PLayList.find({  $nor:[{ctype:"Back End"}]}).select({
       name: 1,
     });
     console.log(result);
